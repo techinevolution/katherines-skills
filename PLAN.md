@@ -10,14 +10,14 @@ Make the repo easy to share, browse, and use one skill at a time.
 
 ## Current Architecture Shape
 
-This is a lightweight file-based repository. Skills live under `skills/<skill-name>/`, and helper scripts live under `scripts/`. See [ARCHITECTURE.md](ARCHITECTURE.md).
+This is a lightweight file-based repository for Katherine's shared skills. Skills live under `skills/<skill-name>/`, helper scripts live under `scripts/`, and `skills.sh.json` groups skills for discovery. See [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Next Implementation Slices
 
 1. Publish the local repo to GitHub as public.
 2. Add a skill index entry for each skill as the collection grows.
-3. Add a validation script that checks every skill has a `SKILL.md`.
-4. Consider a remote install command once the GitHub URL is known.
+3. Add CI for `scripts/validate-skills`.
+4. Consider a remote install command once the skill collection has more usage.
 
 ## Recommended Next Slice
 
@@ -25,7 +25,7 @@ Publish the local repo to GitHub as public.
 
 ## Deferred Work
 
-- Automated skill validation.
+- GitHub Actions validation.
 - Release tags or versioning.
 - Remote one-line installer that downloads one skill from GitHub.
 - Contribution templates or issue templates.
@@ -36,8 +36,9 @@ Publish the local repo to GitHub as public.
 
 ## Validation Path
 
-- Run `find skills -maxdepth 2 -name SKILL.md` and confirm each skill folder has one.
-- Run `./scripts/install-skill.sh project-docs-bootstrap /tmp/katherines-skills-test` to test single-skill installation outside the live Codex folder.
+- Run `scripts/validate-skills`.
+- Run `scripts/install-skills --dry-run project-docs-bootstrap`.
+- Run `scripts/install-skills --mode copy --target /tmp/katherines-skills-test project-docs-bootstrap` to test single-skill installation outside the live Codex folder.
 
 ## Stop Rules
 

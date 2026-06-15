@@ -14,22 +14,68 @@ Browse available skills:
 ls skills
 ```
 
-Install one skill into your local Codex skills folder:
+List available skills:
 
 ```bash
-./scripts/install-skill.sh project-docs-bootstrap
+scripts/install-skills --list
+```
+
+Preview an install without changing files:
+
+```bash
+scripts/install-skills --dry-run
+```
+
+Install all skills into the default Codex skill directory:
+
+```bash
+scripts/install-skills
+```
+
+Install only selected skills:
+
+```bash
+scripts/install-skills project-docs-bootstrap
+```
+
+Install somewhere else:
+
+```bash
+scripts/install-skills --target ~/.agents/skills project-docs-bootstrap
+```
+
+Use copies instead of symlinks:
+
+```bash
+scripts/install-skills --mode copy --target ~/.codex/skills project-docs-bootstrap
+```
+
+Replace an existing installed skill:
+
+```bash
+scripts/install-skills --force project-docs-bootstrap
 ```
 
 ## Main Workflows
 
 - Add a skill as its own folder under `skills/<skill-name>/`.
 - Keep each skill self-contained: `SKILL.md`, plus any `references/`, `scripts/`, `agents/`, `examples/`, or `templates/` it needs.
-- Install a single skill with `scripts/install-skill.sh`.
+- Install one or more skills with `scripts/install-skills`.
+
+## Validate
+
+Run this after edits:
+
+```bash
+scripts/validate-skills
+ruby -c scripts/install-skills
+ruby -c scripts/validate-skills
+```
 
 ## Important Directories
 
 - `skills/`: reusable skills, one folder per skill.
-- `scripts/`: helper scripts for installing or validating skills.
+- `scripts/`: helper scripts for installing and validating skills.
 
 ## Project Docs
 

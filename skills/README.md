@@ -3,7 +3,7 @@
 Each folder in this directory is a separate skill. Install a single skill with:
 
 ```bash
-./scripts/install-skill.sh <skill-name>
+scripts/install-skills <skill-name>
 ```
 
 ## Available Skills
@@ -13,4 +13,3 @@ Each folder in this directory is a separate skill. Install a single skill with:
 Creates or updates concise top-level project compass docs before implementation begins.
 
 Path: `skills/project-docs-bootstrap/`
-

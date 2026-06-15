@@ -12,28 +12,31 @@ This repo is a simple library of skills. The important boundary is the skill fol
 - `skills/<skill-name>/scripts/`: optional helper scripts owned by that skill.
 - `skills/<skill-name>/agents/`: optional agent metadata owned by that skill.
 - `scripts/`: repo-level helper scripts.
+- `skills.sh.json`: grouping metadata for skill discovery.
 
 ## Main Entry Points
 
 - `README.md`: start here for humans.
 - `skills/README.md`: index of available skills.
-- `scripts/install-skill.sh`: install one skill folder into a Codex skills directory.
+- `scripts/install-skills`: list, preview, or install all or selected skills.
+- `scripts/validate-skills`: check every skill has valid YAML frontmatter with `name` and `description`.
 
 ## Major Pieces
 
 - Skill folders: own reusable instructions and their supporting files.
 - Repo docs: explain the collection and how to maintain it.
-- Installer script: copies a selected skill folder to a target skills directory.
+- Installer script: symlinks or copies selected skill folders to a target skills directory.
+- Validator script: checks skill frontmatter.
 
 ## Data Flow
 
 1. A user chooses a skill name from `skills/`.
 2. The installer checks that `skills/<skill-name>/SKILL.md` exists.
-3. The installer copies that skill folder to the target Codex skills directory.
+3. The installer symlinks or copies that skill folder to the target Codex skills directory.
 
 ## Persistence and State
 
-The repo stores only files. Installing a skill copies files into the user's chosen target directory.
+The repo stores only files. Installing a skill creates symlinks by default, or copies files when `--mode copy` is used.
 
 ## External Services and Integrations
 
@@ -42,10 +45,12 @@ The repo stores only files. Installing a skill copies files into the user's chos
 
 ## Validation and Build Shape
 
-There is no build step. Validation is currently manual:
+There is no build step. Validation is currently script-based:
 
-- Confirm every skill folder has a `SKILL.md`.
-- Test installing one skill into a temporary target directory.
+- `scripts/validate-skills`
+- `ruby -c scripts/install-skills`
+- `ruby -c scripts/validate-skills`
+- `scripts/install-skills --dry-run`
 
 ## Important Invariants
 
@@ -56,5 +61,4 @@ There is no build step. Validation is currently manual:
 ## Known Constraints
 
 - Git does not provide friendly sub-repos for this use case.
-- Users who clone the repo get the whole collection, but the installer supports copying only one skill.
-
+- Users who clone the repo get the whole collection, but the installer supports installing only selected skills.

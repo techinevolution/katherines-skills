@@ -32,14 +32,21 @@ Rules:
 ## Commands
 
 - Browse skills: `ls skills`
-- Install one skill: `./scripts/install-skill.sh project-docs-bootstrap`
-- Validate current skill folders: `find skills -maxdepth 2 -name SKILL.md`
+- List skills: `scripts/install-skills --list`
+- Preview install: `scripts/install-skills --dry-run`
+- Install selected skill: `scripts/install-skills project-docs-bootstrap`
+- Install selected skill as copy: `scripts/install-skills --mode copy --target /tmp/katherines-skills-test project-docs-bootstrap`
+- Validate skill folders: `scripts/validate-skills`
+- Check scripts: `ruby -c scripts/install-skills && ruby -c scripts/validate-skills`
 
 ## Conventions
 
 - Keep each skill in `skills/<skill-name>/`.
 - Keep each skill self-contained.
 - Prefer plain-language docs over heavy process.
+- Keep skill descriptions short and useful for routing.
+- Keep skill bodies operational rather than essay-like.
+- Put helper scripts owned by one skill under that skill's `scripts/` directory.
 - Use placeholders only when a user decision is truly needed, and mark them as `TODO(user): ...`.
 
 ## Boundaries
@@ -52,9 +59,9 @@ Rules:
 
 - Confirm the repo files exist.
 - Confirm the copied skill contains `SKILL.md` and its companion files.
-- Test the installer against a temporary target directory.
+- Run `scripts/validate-skills`.
+- Run `scripts/install-skills --dry-run`.
 
 ## Final Report
 
 Include files created or updated, validation run, placeholders, and the recommended next step.
-

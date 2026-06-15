@@ -23,13 +23,14 @@ The repo should let people:
 
 - Maintainer adds or updates a skill folder under `skills/`.
 - User browses `skills/README.md` and chooses a skill.
-- User installs one selected skill with `scripts/install-skill.sh`.
+- User installs one or more selected skills with `scripts/install-skills`.
 
 ## Major Features
 
 - One folder per skill.
 - A human-readable index of available skills.
-- A single-skill installer script.
+- An installer script that can list, preview, install all skills, or install selected skills.
+- A validator script that checks skill frontmatter.
 - Concise project docs for future contributors and agents.
 
 ## Examples of Success
@@ -49,4 +50,3 @@ The repo should let people:
 - Keep each skill self-contained.
 - Do not include private credentials, local secrets, or personal machine state.
 - Keep docs practical and lightweight.
-

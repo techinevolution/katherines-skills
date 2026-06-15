@@ -1,0 +1,11 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Project Setup",
+      "description": "Skills for creating concise project compass docs before implementation.",
+      "skills": ["project-docs-bootstrap"]
+    }
+  ]
+}

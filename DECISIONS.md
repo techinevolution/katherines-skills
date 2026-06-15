@@ -33,3 +33,11 @@ Decision: License the repo under MIT.
 Reason: The repo is meant for public sharing and reuse, and MIT is a simple permissive license.
 
 Consequences: Other people can use, copy, modify, and share the skills as long as they keep the copyright and license notice.
+
+## 2026-06-15: Use a public shared-skills repository pattern
+
+Decision: Use plural repo scripts, validation, and grouping metadata for Katherine's public skills collection.
+
+Reason: This keeps the repo easy to browse, install from, and maintain as the collection grows.
+
+Consequences: The repo now supports listing, dry-run installs, selected installs, symlink or copy modes, and frontmatter validation.
