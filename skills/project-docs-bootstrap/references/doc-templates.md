@@ -158,6 +158,22 @@ Rules:
 - Do not let TODO.md override PLAN.md.
 - Do not let technical evidence files replace generalist-readable summaries.
 
+## Implementation Discipline
+
+Start with the simplest efficient solution that satisfies the current goal while respecting the agreed architecture.
+
+Do not add scaffolding, abstractions, validators, bridges, plugins, migrations, or automation unless they directly help the current slice work safely and clearly.
+
+Code should be simple, but not sloppy:
+- Follow the existing architecture and folder boundaries.
+- Avoid spaghetti logic and hidden side effects.
+- Prefer small readable functions over clever systems.
+- Add tests when behavior could break, repeat, or affect important data.
+- Add scaffolding only when it reduces real risk or repeated work.
+- Stop before building future infrastructure that has not been requested or approved.
+
+When unsure, choose the smallest clean implementation that can be understood, reviewed, and changed later.
+
 ## Commands
 
 - Setup: `<command or TODO(user): confirm setup>`
