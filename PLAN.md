@@ -32,7 +32,7 @@ Publish the local repo to GitHub as public.
 
 ## Open Questions
 
-- TODO(user): Confirm the GitHub repo owner should be `KatherinesBrain`.
+- None right now.
 
 ## Validation Path
 
