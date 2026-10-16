@@ -1,4 +1,4 @@
 interface:
   display_name: "Project Docs Bootstrap"
-  short_description: "Create concise project compass docs"
-  default_prompt: "Use $project-docs-bootstrap to create concise README, outline, plan, agent, decision, and TODO docs for this project before implementation."
+  short_description: "Create and reconcile project compass docs"
+  default_prompt: "Use $project-docs-bootstrap to create missing project docs or reconcile existing docs with verified progress and the next useful slice."

@@ -4,7 +4,7 @@
   "groupings": [
     {
       "title": "Project Setup",
-      "description": "Skills for creating concise project compass docs before implementation.",
+      "description": "Skills for creating project compass docs and reconciling them with verified progress.",
       "skills": ["project-docs-bootstrap"]
     }
   ]

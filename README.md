@@ -4,7 +4,7 @@ A shared collection of reusable Codex skills. Each skill lives in its own folder
 
 ## Status
 
-Starter repo prepared for public GitHub publishing. The first included skill is `project-docs-bootstrap`.
+Published at [techinevolution/katherines-skills](https://github.com/techinevolution/katherines-skills). The collection currently includes `project-docs-bootstrap`, which creates project orientation docs and reconciles existing docs with verified implementation progress.
 
 ## Quick Start
 

@@ -1,36 +1,47 @@
 ---
 name: project-docs-bootstrap
-description: Use when a user asks Codex to create or update top-level project orientation docs before implementation, including README.md, AGENTS.md, PROJECT_OUTLINE.md, PLAN.md, ARCHITECTURE.md, DECISIONS.md, TODO.md, or PROJECT_BRIEF.md, especially for new repos, repo handoff, agent onboarding, planning docs, project compass docs, architecture docs, or documentation-first setup.
+description: Create top-level project orientation docs or reconcile existing docs with verified implementation progress. Use for documentation-first setup, project plans, architecture docs, agent onboarding, and documentation updates before handoff, PR, or merge.
 ---
 
 # Project Docs Bootstrap
 
 ## Goal
 
-Create concise, non-overlapping project compass docs before product implementation begins. These docs should help a generalist user and future coding agents understand what the project is, where it is going, how to work safely, and what the first implementation slice should be.
+Create and maintain concise, non-overlapping project compass docs. Help a generalist user and future coding agents understand what the project is, what currently works, where it is going, and what to do next.
 
-## Workflow
+## Choose the Workflow
 
-1. Read the user's project outline or request.
-2. If a critical detail is missing, ask the smallest necessary clarification. Do not ask a long questionnaire by default.
-3. Inspect the repo if it already exists.
-4. Create or update the required docs.
-5. Keep docs concise, readable, and non-overlapping.
-6. Use placeholders only when information is truly unknown, and mark them clearly as `TODO(user): ...`.
-7. Do not begin product implementation as part of this skill unless the user explicitly asks after docs are created.
-8. In the final response, list files created/updated, placeholders, and the recommended first implementation slice from `PLAN.md`.
+Read the user's request and inspect the existing repo and project docs. Use **Create** for missing project orientation docs and **Reconcile** for docs that need to reflect current work. A task may need both. Preserve useful existing structure and filenames.
+
+If a critical product or architecture decision is missing, ask the smallest necessary clarification. Use `TODO(user): ...` only for genuinely unknown information.
+
+### Create
+
+1. Establish the intended product, current repo state, and agreed technical direction.
+2. Create the applicable docs below using `references/doc-templates.md` for compact starter shapes.
+3. Separate intended behavior from implemented and validated behavior. Do not invent commands or claim planned features work.
+4. Check that current status, next work, links, and document boundaries agree.
+
+### Reconcile
+
+1. Establish what is implemented and what has been validated from relevant code, changes, tests, and observed behavior. State validation gaps; code inspection alone does not prove runtime behavior.
+2. Compare that evidence with every affected milestone, including later slices and deferred work. Completion depends on implemented behavior and validation, not position in the plan.
+3. Mark supported completion wherever it appears. Split partially completed items into what works and what remains; do not mark the whole item done.
+4. Update every affected occurrence across project docs, including summaries, architecture, checklists, and optional briefs. Remove stale current-status claims while preserving useful decision history and deferred work that remains deferred.
+5. Make the current state and next useful slice coherent. Verify documented commands and links where practical, and label unverified commands.
+
+In the final response, list docs changed, validation and its limits, remaining placeholders or blockers, and the recommended next slice from `PLAN.md`.
 
 ## Stop Rules
 
-- Stop before coding features.
-- Stop and ask if `PROJECT_OUTLINE.md` and `PLAN.md` would contradict each other.
-- Stop and ask if `ARCHITECTURE.md` would contradict `PROJECT_OUTLINE.md` or `PLAN.md`.
-- Stop and ask if the project has privacy/security implications the user has not defined.
+- Documentation work does not authorize feature implementation. If implementation is already part of the user's request, continue within that scope after the docs are ready.
+- Resolve stale status claims from evidence. Ask when conflicts between the outline, plan, and architecture require a product or architecture decision that the user has not made.
+- Ask before deciding an undefined privacy or security boundary; do not put private local context into shareable docs.
 - Do not create huge process documents. These files are a compass, not a bureaucracy.
 
 ## Default Doc Set
 
-Always create or update:
+For Create, use the following core set. For Reconcile, update affected docs; add missing docs only when needed for the request:
 
 - `README.md`: user/developer overview, current status, quick start, main workflows, important directories, and links to top-level docs.
 - `AGENTS.md`: coding-agent operating instructions, reading order, commands, conventions, boundaries, validation, and final report expectations.
@@ -102,6 +113,10 @@ Code should be simple, but not sloppy:
 - Stop before building future infrastructure that has not been requested or approved.
 
 When unsure, choose the smallest clean implementation that can be understood, reviewed, and changed later.
+
+## Documentation Maintenance
+
+After implementation, reconcile every affected project document with implemented behavior and validation. Include later and deferred milestones, split partial completion, and keep current status and next work consistent.
 ```
 
 ## Writing Rules

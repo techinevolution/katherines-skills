@@ -1,6 +1,6 @@
 # Doc Templates
 
-Use these as starting shapes, not rigid forms. Keep each doc concise and delete sections that do not apply.
+Use these as starting shapes, not rigid forms. Keep each doc concise and delete sections and links that do not apply. When reconciling existing docs, preserve useful structure and update every affected status claim against implementation and validation evidence.
 
 ## README.md
 
@@ -87,7 +87,7 @@ Use these as starting shapes, not rigid forms. Keep each doc concise and delete 
 
 ## Current State
 
-<Current checkpoint.>
+<What is implemented and validated, with any validation gaps. Separate partial work from completed work.>
 
 ## Current Product Goal
 
@@ -105,11 +105,11 @@ Use these as starting shapes, not rigid forms. Keep each doc concise and delete 
 
 ## Recommended Next Slice
 
-<Smallest useful first slice.>
+<Smallest useful next slice based on what remains, even when work was completed out of order.>
 
 ## Deferred Work
 
-- <deferred>
+- <work that remains deferred; reconcile any completed portion with the current state>
 
 ## Open Questions
 
@@ -173,6 +173,10 @@ Code should be simple, but not sloppy:
 - Stop before building future infrastructure that has not been requested or approved.
 
 When unsure, choose the smallest clean implementation that can be understood, reviewed, and changed later.
+
+## Documentation Maintenance
+
+After implementation, reconcile every affected project document with implemented behavior and validation. Include later and deferred milestones, split partial completion, and keep current status and next work consistent.
 
 ## Commands
 

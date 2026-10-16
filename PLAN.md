@@ -2,11 +2,11 @@
 
 ## Current State
 
-The repo has been started locally with one skill: `project-docs-bootstrap`. It is intended to be Katherine's first public GitHub repo.
+The public repository is `techinevolution/katherines-skills`, with `main` as its default branch. It contains one skill, `project-docs-bootstrap`, with Create and Reconcile workflows, matching document templates, and Codex UI metadata. Installation and validation use the existing local scripts; CI is not configured.
 
 ## Current Product Goal
 
-Make the repo easy to share, browse, and use one skill at a time.
+Keep the published skill current, self-contained, and easy to install and use.
 
 ## Current Architecture Shape
 
@@ -14,14 +14,12 @@ This is a lightweight file-based repository for Katherine's shared skills. Skill
 
 ## Next Implementation Slices
 
-1. Publish the local repo to GitHub as public.
-2. Add a skill index entry for each skill as the collection grows.
-3. Add CI for `scripts/validate-skills`.
-4. Consider a remote install command once the skill collection has more usage.
+1. Use the updated reconciliation workflow on the next project documentation update and refine it only for observed gaps.
+2. Add a skill index entry when another reusable skill is selected for publication.
 
 ## Recommended Next Slice
 
-Publish the local repo to GitHub as public.
+Apply the reconciliation workflow when a project next needs its docs brought up to date; check that completed, partial, and deferred work agree across affected documents.
 
 ## Deferred Work
 
@@ -37,8 +35,9 @@ Publish the local repo to GitHub as public.
 ## Validation Path
 
 - Run `scripts/validate-skills`.
-- Run `scripts/install-skills --dry-run project-docs-bootstrap`.
-- Run `scripts/install-skills --mode copy --target /tmp/katherines-skills-test project-docs-bootstrap` to test single-skill installation outside the live Codex folder.
+- Run `ruby -c scripts/install-skills` and `ruby -c scripts/validate-skills`.
+- Run `scripts/install-skills --dry-run`.
+- Run `scripts/install-skills --mode copy --target <temporary-directory> project-docs-bootstrap` and compare the installed files with the source to test installation outside the live Codex folder.
 
 ## Stop Rules
 

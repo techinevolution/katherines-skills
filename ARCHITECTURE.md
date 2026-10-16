@@ -40,7 +40,7 @@ The repo stores only files. Installing a skill creates symlinks by default, or c
 
 ## External Services and Integrations
 
-- GitHub is the expected sharing target, but no remote is configured yet.
+- The public GitHub repository is `techinevolution/katherines-skills`, configured as `origin` with `main` as the default branch.
 - Codex discovers installed skills from the user's local skills folder.
 
 ## Validation and Build Shape

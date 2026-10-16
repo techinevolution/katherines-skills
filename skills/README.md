@@ -10,6 +10,6 @@ scripts/install-skills <skill-name>
 
 ### `project-docs-bootstrap`
 
-Creates or updates concise top-level project compass docs before implementation begins.
+Creates concise top-level project compass docs and reconciles existing docs with verified progress. Its Reconcile workflow covers completed, partial, later, and deferred work across every affected document.
 
 Path: `skills/project-docs-bootstrap/`
